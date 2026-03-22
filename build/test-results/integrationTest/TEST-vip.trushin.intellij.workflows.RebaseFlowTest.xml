@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vip.trushin.intellij.workflows.RebaseFlowTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-22T10:44:57" hostname="1-c.local" time="21.427">
+  <properties/>
+  <testcase name="Step 1: Create and checkout feature branch" classname="vip.trushin.intellij.workflows.RebaseFlowTest" time="3.839"/>
+  <testcase name="Step 2: Rebase onto main" classname="vip.trushin.intellij.workflows.RebaseFlowTest" time="0.795"/>
+  <testcase name="Step 3: Force push after rebase" classname="vip.trushin.intellij.workflows.RebaseFlowTest" time="16.792"/>
+  <system-out><![CDATA[21:44:57.411 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /Users/macbookpro/git-flow-log.jsonl
+21:44:57.755 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: checkout_feature_for_rebase (CHECKOUT) ===
+21:44:58.106 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214457_756_before_checkout_feature_for_rebase.png
+21:44:58.146 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214458_106_before_checkout_feature_for_rebase_hierarchy.xml
+21:44:58.147 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214457_756_before_checkout_feature_for_rebase.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214458_106_before_checkout_feature_for_rebase_hierarchy.xml
+21:45:01.554 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214501_189_after_checkout_feature_for_rebase.png
+21:45:01.592 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214501_554_after_checkout_feature_for_rebase_hierarchy.xml
+21:45:01.592 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214501_189_after_checkout_feature_for_rebase.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214501_554_after_checkout_feature_for_rebase_hierarchy.xml
+21:45:01.592 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=CHECKOUT, outcome=SUCCESS
+21:45:01.592 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: checkout_feature_for_rebase -> SUCCESS ===
+21:45:01.593 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: rebase_onto_main (REBASE) ===
+21:45:01.910 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214501_593_before_rebase_onto_main.png
+21:45:01.943 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214501_910_before_rebase_onto_main_hierarchy.xml
+21:45:01.943 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214501_593_before_rebase_onto_main.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214501_910_before_rebase_onto_main_hierarchy.xml
+21:45:02.352 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214502_017_after_rebase_onto_main.png
+21:45:02.387 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214502_352_after_rebase_onto_main_hierarchy.xml
+21:45:02.388 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214502_017_after_rebase_onto_main.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214502_352_after_rebase_onto_main_hierarchy.xml
+21:45:02.388 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=REBASE, outcome=SUCCESS
+21:45:02.388 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: rebase_onto_main -> SUCCESS ===
+21:45:02.389 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: force_push_after_rebase (PUSH) ===
+21:45:02.747 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214502_389_before_force_push_after_rebase.png
+21:45:02.782 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214502_748_before_force_push_after_rebase_hierarchy.xml
+21:45:02.782 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214502_389_before_force_push_after_rebase.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214502_748_before_force_push_after_rebase_hierarchy.xml
+21:45:19.120 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214518_699_after_force_push_after_rebase.png
+21:45:19.178 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214519_122_after_force_push_after_rebase_hierarchy.xml
+21:45:19.178 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214518_699_after_force_push_after_rebase.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214519_122_after_force_push_after_rebase_hierarchy.xml
+21:45:19.179 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
+21:45:19.179 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: force_push_after_rebase -> SUCCESS ===
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

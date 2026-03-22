@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vip.trushin.intellij.workflows.FeatureBranchFlowTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-03-22T10:44:04" hostname="1-c.local" time="29.481">
+  <properties/>
+  <testcase name="Step 1: Create a new feature branch" classname="vip.trushin.intellij.workflows.FeatureBranchFlowTest" time="4.316"/>
+  <testcase name="Step 2: Edit a file via IDE" classname="vip.trushin.intellij.workflows.FeatureBranchFlowTest" time="3.375"/>
+  <testcase name="Step 3: Stage and commit changes" classname="vip.trushin.intellij.workflows.FeatureBranchFlowTest" time="8.387"/>
+  <testcase name="Step 4: Push to remote" classname="vip.trushin.intellij.workflows.FeatureBranchFlowTest" time="13.403"/>
+  <system-out><![CDATA[21:44:03.602 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /Users/macbookpro/git-flow-log.jsonl
+21:44:04.029 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: create_feature_branch (BRANCH_CREATE) ===
+21:44:04.692 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214404_030_before_create_feature_branch.png
+21:44:04.749 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214404_692_before_create_feature_branch_hierarchy.xml
+21:44:04.749 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214404_030_before_create_feature_branch.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214404_692_before_create_feature_branch_hierarchy.xml
+21:44:08.260 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214407_815_after_create_feature_branch.png
+21:44:08.339 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214408_260_after_create_feature_branch_hierarchy.xml
+21:44:08.339 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214407_815_after_create_feature_branch.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214408_260_after_create_feature_branch_hierarchy.xml
+21:44:08.340 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=BRANCH_CREATE, outcome=SUCCESS
+21:44:08.340 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: create_feature_branch -> SUCCESS ===
+21:44:08.342 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: edit_file (COMMIT) ===
+21:44:08.721 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214408_342_before_edit_file.png
+21:44:08.781 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214408_721_before_edit_file_hierarchy.xml
+21:44:08.781 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214408_342_before_edit_file.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214408_721_before_edit_file_hierarchy.xml
+21:44:11.640 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214411_220_after_edit_file.png
+21:44:11.715 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214411_640_after_edit_file_hierarchy.xml
+21:44:11.715 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214411_220_after_edit_file.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214411_640_after_edit_file_hierarchy.xml
+21:44:11.716 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
+21:44:11.716 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: edit_file -> SUCCESS ===
+21:44:11.717 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: stage_and_commit (COMMIT) ===
+21:44:12.084 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214411_717_before_stage_and_commit.png
+21:44:12.148 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214412_085_before_stage_and_commit_hierarchy.xml
+21:44:12.149 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214411_717_before_stage_and_commit.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214412_085_before_stage_and_commit_hierarchy.xml
+21:44:20.043 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214419_577_after_stage_and_commit.png
+21:44:20.102 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214420_044_after_stage_and_commit_hierarchy.xml
+21:44:20.102 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214419_577_after_stage_and_commit.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214420_044_after_stage_and_commit_hierarchy.xml
+21:44:20.102 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
+21:44:20.102 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: stage_and_commit -> SUCCESS ===
+21:44:20.105 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: push_to_remote (PUSH) ===
+21:44:20.508 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214420_105_before_push_to_remote.png
+21:44:20.590 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214420_509_before_push_to_remote_hierarchy.xml
+21:44:20.590 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214420_105_before_push_to_remote.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214420_509_before_push_to_remote_hierarchy.xml
+21:44:33.410 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214433_020_after_push_to_remote.png
+21:44:33.502 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214433_410_after_push_to_remote_hierarchy.xml
+21:44:33.502 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214433_020_after_push_to_remote.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214433_410_after_push_to_remote_hierarchy.xml
+21:44:33.504 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=FAILURE
+21:44:33.504 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: push_to_remote -> FAILURE ===
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
