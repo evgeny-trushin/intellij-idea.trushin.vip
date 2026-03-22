@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="vip.trushin.intellij.model.EventLoggerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-03-22T22:41:36" hostname="1-c.local" time="0.014">
+<testsuite name="vip.trushin.intellij.model.EventLoggerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-03-22T22:50:11" hostname="1-c.local" time="0.014">
   <properties/>
   <testcase name="multiple events preserve order()" classname="vip.trushin.intellij.model.EventLoggerTest" time="0.005"/>
   <testcase name="clear empties the log file()" classname="vip.trushin.intellij.model.EventLoggerTest" time="0.002"/>
@@ -8,29 +8,29 @@
   <testcase name="readAll returns logged events()" classname="vip.trushin.intellij.model.EventLoggerTest" time="0.002"/>
   <testcase name="readByType filters correctly()" classname="vip.trushin.intellij.model.EventLoggerTest" time="0.002"/>
   <testcase name="path returns the log file path()" classname="vip.trushin.intellij.model.EventLoggerTest" time="0.001"/>
-  <system-out><![CDATA[09:41:36.227 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-17418994474322376358.jsonl
-09:41:36.228 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=BRANCH_CREATE, outcome=SUCCESS
-09:41:36.228 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
-09:41:36.228 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
-09:41:36.228 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=MERGE, outcome=SUCCESS
-09:41:36.228 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=STASH, outcome=SUCCESS
-09:41:36.231 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-17485080661420985278.jsonl
-09:41:36.231 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
-09:41:36.232 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
-09:41:36.232 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event log cleared
-09:41:36.233 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-17574129548975434076.jsonl
-09:41:36.233 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
-09:41:36.234 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-13075865242559523146.jsonl
-09:41:36.234 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/nonexistent.jsonl
-09:41:36.235 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-5652045820890181584.jsonl
-09:41:36.236 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
-09:41:36.236 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
-09:41:36.236 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=FETCH, outcome=SUCCESS
-09:41:36.237 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-4500744307267847914.jsonl
-09:41:36.237 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
-09:41:36.238 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
-09:41:36.238 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
-09:41:36.239 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-17216936491830313254.jsonl
+  <system-out><![CDATA[09:50:11.785 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-7191282519901435583.jsonl
+09:50:11.786 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=BRANCH_CREATE, outcome=SUCCESS
+09:50:11.786 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
+09:50:11.786 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
+09:50:11.786 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=MERGE, outcome=SUCCESS
+09:50:11.786 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=STASH, outcome=SUCCESS
+09:50:11.789 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-2218620407979312622.jsonl
+09:50:11.790 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
+09:50:11.790 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
+09:50:11.790 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event log cleared
+09:50:11.791 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-15660277322076490931.jsonl
+09:50:11.792 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
+09:50:11.792 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-6877681029654619600.jsonl
+09:50:11.792 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/nonexistent.jsonl
+09:50:11.793 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-1155152948601402393.jsonl
+09:50:11.794 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
+09:50:11.794 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
+09:50:11.794 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=FETCH, outcome=SUCCESS
+09:50:11.795 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-14092938296455665676.jsonl
+09:50:11.795 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
+09:50:11.796 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
+09:50:11.796 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=COMMIT, outcome=SUCCESS
+09:50:11.797 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/event-log-test-16149406561560460004.jsonl
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

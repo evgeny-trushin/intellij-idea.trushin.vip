@@ -57,14 +57,17 @@ class ScreenCapture(
     }
 
     /**
-     * Capture the IDE frame by painting it to a BufferedImage on the EDT.
-     * This renders ONLY the IntelliJ IDEA window — no other apps visible.
+     * Capture the IDE frame + all visible popups/dialogs by compositing them
+     * onto a single BufferedImage on the EDT.
      *
-     * Works by executing JavaScript inside the IDE's JVM via Remote Robot:
+     * This renders ONLY IntelliJ IDEA content — no other apps visible.
+     *
+     * How it works:
      * 1. Gets the project's JFrame from WindowManager
-     * 2. Creates a BufferedImage of the frame's dimensions
-     * 3. Paints the frame to the image's Graphics context on the EDT
-     * 4. Writes the image as PNG to the specified file path
+     * 2. Paints the main frame to a BufferedImage
+     * 3. Finds all visible child windows (popups, dialogs, tooltips)
+     * 4. Paints each overlay at its correct position relative to the frame
+     * 5. Result: a composite image showing the frame + all active dialogs
      */
     private fun captureViaIdePaint(file: File): Boolean {
         return try {
@@ -84,13 +87,34 @@ class ScreenCapture(
                             if (projects.length == 0) return;
                             var frame = com.intellij.openapi.wm.WindowManager.getInstance().getFrame(projects[0]);
                             if (frame == null) return;
-                            var w = frame.getWidth();
-                            var h = frame.getHeight();
-                            if (w <= 0 || h <= 0) return;
-                            var img = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+                            var fb = frame.getBounds();
+                            if (fb.width <= 0 || fb.height <= 0) return;
+
+                            // Paint the main IDE frame
+                            var img = new BufferedImage(fb.width, fb.height, BufferedImage.TYPE_INT_RGB);
                             var g = img.createGraphics();
                             frame.paint(g);
                             g.dispose();
+
+                            // Composite all visible overlay windows (popups, dialogs)
+                            // on top of the frame at their correct positions
+                            var allWindows = java.awt.Window.getWindows();
+                            for (var i = 0; i < allWindows.length; i++) {
+                                var w = allWindows[i];
+                                if (w.isVisible() && w !== frame && w.getWidth() > 10 && w.getHeight() > 10) {
+                                    var wb = w.getBounds();
+                                    var rx = wb.x - fb.x;
+                                    var ry = wb.y - fb.y;
+                                    // Only paint windows that overlap the frame area
+                                    if (rx >= -wb.width && ry >= -wb.height && rx < fb.width && ry < fb.height) {
+                                        var g2 = img.createGraphics();
+                                        g2.translate(rx, ry);
+                                        w.paint(g2);
+                                        g2.dispose();
+                                    }
+                                }
+                            }
+
                             ImageIO.write(img, "png", new File("$filePath"));
                             success.set(true);
                         } catch(e) {
