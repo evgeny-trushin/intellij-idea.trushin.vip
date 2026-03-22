@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vip.trushin.intellij.workflows.PrReviewFlowTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-22T10:44:33" hostname="1-c.local" time="9.585">
+  <properties/>
+  <testcase name="Step 1: Open Pull Requests tool window" classname="vip.trushin.intellij.workflows.PrReviewFlowTest" time="1.777"/>
+  <testcase name="Step 2: Create a Pull Request" classname="vip.trushin.intellij.workflows.PrReviewFlowTest" time="3.984"/>
+  <testcase name="Step 3: Review and merge PR" classname="vip.trushin.intellij.workflows.PrReviewFlowTest" time="3.823"/>
+  <system-out><![CDATA[21:44:33.581 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /Users/macbookpro/git-flow-log.jsonl
+21:44:33.969 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: open_pr_tool_window (MERGE) ===
+21:44:34.406 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214433_970_before_open_pr_tool_window.png
+21:44:34.497 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214434_406_before_open_pr_tool_window_hierarchy.xml
+21:44:34.497 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214433_970_before_open_pr_tool_window.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214434_406_before_open_pr_tool_window_hierarchy.xml
+21:44:35.681 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214435_324_after_open_pr_tool_window.png
+21:44:35.743 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214435_681_after_open_pr_tool_window_hierarchy.xml
+21:44:35.744 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214435_324_after_open_pr_tool_window.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214435_681_after_open_pr_tool_window_hierarchy.xml
+21:44:35.744 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=MERGE, outcome=SUCCESS
+21:44:35.744 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: open_pr_tool_window -> SUCCESS ===
+21:44:35.746 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: create_pull_request (PUSH) ===
+21:44:36.075 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214435_747_before_create_pull_request.png
+21:44:36.137 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214436_075_before_create_pull_request_hierarchy.xml
+21:44:36.137 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214435_747_before_create_pull_request.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214436_075_before_create_pull_request_hierarchy.xml
+21:44:39.649 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214439_292_after_create_pull_request.png
+21:44:39.728 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214439_649_after_create_pull_request_hierarchy.xml
+21:44:39.728 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214439_292_after_create_pull_request.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214439_649_after_create_pull_request_hierarchy.xml
+21:44:39.729 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
+21:44:39.729 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: create_pull_request -> SUCCESS ===
+21:44:39.730 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: review_and_merge_pr (MERGE) ===
+21:44:40.078 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214439_730_before_review_and_merge_pr.png
+21:44:40.141 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214440_078_before_review_and_merge_pr_hierarchy.xml
+21:44:40.141 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214439_730_before_review_and_merge_pr.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214440_078_before_review_and_merge_pr_hierarchy.xml
+21:44:43.457 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214442_990_after_review_and_merge_pr.png
+21:44:43.551 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214443_458_after_review_and_merge_pr_hierarchy.xml
+21:44:43.551 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214442_990_after_review_and_merge_pr.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214443_458_after_review_and_merge_pr_hierarchy.xml
+21:44:43.551 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=MERGE, outcome=CANCELLED
+21:44:43.551 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: review_and_merge_pr -> CANCELLED ===
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

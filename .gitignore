@@ -25,3 +25,11 @@ replay_pid*
 
 # Kotlin Gradle plugin data, see https://kotlinlang.org/docs/whatsnew20.html#new-directory-for-kotlin-data-in-gradle-projects
 .kotlin/
+
+# Captured images
+captures/*.png
+captures/*.jpg
+captures/*.jpeg
+captures/*.gif
+captures/*.bmp
+captures/*.tiff

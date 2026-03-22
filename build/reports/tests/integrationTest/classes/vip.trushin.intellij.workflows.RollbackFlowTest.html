@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - RollbackFlowTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>RollbackFlowTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/vip.trushin.intellij.workflows.html">vip.trushin.intellij.workflows</a> &gt; RollbackFlowTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">6.553s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Step 1: Open Git Log</td>
+<td class="success">openGitLog()</td>
+<td class="success">3.963s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Step 4: Reset with hard mode</td>
+<td class="success">resetHard()</td>
+<td class="success">0.840s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Step 3: Reset with mixed mode</td>
+<td class="success">resetMixed()</td>
+<td class="success">0.931s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Step 2: Reset with soft mode</td>
+<td class="success">resetSoft()</td>
+<td class="success">0.819s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>21:45:19.231 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /Users/macbookpro/git-flow-log.jsonl
+21:45:19.610 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: open_log_for_rollback (RESET) ===
+21:45:20.023 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214519_611_before_open_log_for_rollback.png
+21:45:20.067 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214520_024_before_open_log_for_rollback_hierarchy.xml
+21:45:20.067 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214519_611_before_open_log_for_rollback.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214520_024_before_open_log_for_rollback_hierarchy.xml
+Recent commits:
+c474f71 test: GitFlow capture test commit
+51f4cb3 Initial commit
+21:45:23.525 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214523_167_after_open_log_for_rollback.png
+21:45:23.568 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214523_526_after_open_log_for_rollback_hierarchy.xml
+21:45:23.568 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214523_167_after_open_log_for_rollback.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214523_526_after_open_log_for_rollback_hierarchy.xml
+21:45:23.568 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=RESET, outcome=SUCCESS
+21:45:23.568 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: open_log_for_rollback -&gt; SUCCESS ===
+21:45:23.569 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: reset_soft (RESET) ===
+21:45:23.902 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214523_569_before_reset_soft.png
+21:45:23.946 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214523_902_before_reset_soft_hierarchy.xml
+21:45:23.946 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214523_569_before_reset_soft.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214523_902_before_reset_soft_hierarchy.xml
+21:45:24.341 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_007_after_reset_soft.png
+21:45:24.387 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_341_after_reset_soft_hierarchy.xml
+21:45:24.388 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_007_after_reset_soft.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_341_after_reset_soft_hierarchy.xml
+21:45:24.388 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=RESET, outcome=SUCCESS
+21:45:24.388 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: reset_soft -&gt; SUCCESS ===
+21:45:24.389 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: reset_mixed (RESET) ===
+21:45:24.720 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_389_before_reset_mixed.png
+21:45:24.757 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_720_before_reset_mixed_hierarchy.xml
+21:45:24.757 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_389_before_reset_mixed.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_720_before_reset_mixed_hierarchy.xml
+21:45:25.262 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_895_after_reset_mixed.png
+21:45:25.316 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214525_263_after_reset_mixed_hierarchy.xml
+21:45:25.316 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214524_895_after_reset_mixed.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214525_263_after_reset_mixed_hierarchy.xml
+21:45:25.318 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=RESET, outcome=SUCCESS
+21:45:25.318 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: reset_mixed -&gt; SUCCESS ===
+21:45:25.321 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: reset_hard (RESET) ===
+21:45:25.681 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214525_321_before_reset_hard.png
+21:45:25.728 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214525_681_before_reset_hard_hierarchy.xml
+21:45:25.728 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214525_321_before_reset_hard.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214525_681_before_reset_hard_hierarchy.xml
+21:45:26.115 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214525_785_after_reset_hard.png
+21:45:26.161 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214526_115_after_reset_hard_hierarchy.xml
+21:45:26.161 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214525_785_after_reset_hard.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214526_115_after_reset_hard_hierarchy.xml
+21:45:26.161 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=RESET, outcome=SUCCESS
+21:45:26.161 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: reset_hard -&gt; SUCCESS ===
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.5</a> at Mar 22, 2026, 9:45:37 PM</p>
+</div>
+</div>
+</body>
+</html>
