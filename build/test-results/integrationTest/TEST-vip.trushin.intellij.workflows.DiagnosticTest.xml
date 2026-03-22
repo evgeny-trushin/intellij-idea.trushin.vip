@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="vip.trushin.intellij.workflows.DiagnosticTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-22T10:43:48" hostname="1-c.local" time="15.327">
+<testsuite name="vip.trushin.intellij.workflows.DiagnosticTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-22T21:53:41" hostname="1-c.local" time="18.926">
   <properties/>
-  <testcase name="Diag 1: Branch popup - type and see what happens" classname="vip.trushin.intellij.workflows.DiagnosticTest" time="8.283"/>
-  <testcase name="Diag 2: Unstash dialog via action" classname="vip.trushin.intellij.workflows.DiagnosticTest" time="3.0"/>
-  <testcase name="Diag 3: Try Git checkout via action" classname="vip.trushin.intellij.workflows.DiagnosticTest" time="4.043"/>
-  <system-out><![CDATA[DIAG: Search fields after type: 2
+  <testcase name="Diag 1: Branch popup - type and see what happens" classname="vip.trushin.intellij.workflows.DiagnosticTest" time="8.088"/>
+  <testcase name="Diag 2: Unstash dialog via action" classname="vip.trushin.intellij.workflows.DiagnosticTest" time="6.79"/>
+  <testcase name="Diag 3: Try Git checkout via action" classname="vip.trushin.intellij.workflows.DiagnosticTest" time="4.047"/>
+  <system-out><![CDATA[DIAG: Search fields after type: 5
 DIAG: SpeedSearch: 0
 DIAG: HeavyWeightWindow: 1
 DIAG: ActionMenuItem after enter: 0
 DIAG: HeavyWeightWindow after enter: 1
 DIAG: Checkout items: 1
 DIAG: Git.Unstash -> UnstashDialogFixture: 0
-DIAG: Git.Unstash -> MyDialog: 1
+DIAG: Git.Unstash -> MyDialog: 0
+DIAG: Git.UnstashChanges -> UnstashDialogFixture: 0
+DIAG: Git.UnstashChanges -> MyDialog: 0
+DIAG: Vcs.Git.Unstash -> UnstashDialogFixture: 0
+DIAG: Vcs.Git.Unstash -> MyDialog: 0
 DIAG: Branch info: not-set
 DIAG: Checkout result: not-set
 ]]></system-out>

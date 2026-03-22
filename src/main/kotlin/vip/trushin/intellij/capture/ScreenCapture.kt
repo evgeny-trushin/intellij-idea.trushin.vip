@@ -2,15 +2,20 @@ package vip.trushin.intellij.capture
 
 import com.intellij.remoterobot.RemoteRobot
 import org.slf4j.LoggerFactory
-import java.awt.image.BufferedImage
 import java.io.File
 import java.nio.file.Path
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import javax.imageio.ImageIO
 
 /**
  * Handles screenshot capture and UI tree dumps (R6.1, R6.3).
+ *
+ * Screenshot strategy (in priority order):
+ * 1. IDE-internal paint: Renders the IDE frame from inside the JVM via
+ *    SwingUtilities.invokeAndWait + frame.paint(). This captures ONLY the
+ *    IntelliJ window content — no other apps, no desktop, no terminal.
+ * 2. Remote Robot API: robot.getScreenshot() — captures the full display.
+ * 3. macOS screencapture: screencapture -x — full display fallback.
  */
 class ScreenCapture(
     private val capturesDir: Path,
@@ -25,23 +30,131 @@ class ScreenCapture(
     }
 
     /**
-     * Take a screenshot via Remote Robot and save to captures directory.
-     * Returns the path to the saved screenshot file.
+     * Take a screenshot of the IntelliJ IDE window only.
+     * Uses IDE-internal rendering to capture exactly the IDE content,
+     * excluding other applications and the desktop.
+     *
+     * Returns the absolute path to the saved PNG file.
      */
     fun takeScreenshot(label: String): String {
         val timestamp = LocalDateTime.now().format(timestampFormat)
         val filename = "${timestamp}_${sanitize(label)}.png"
         val file = capturesDir.resolve(filename).toFile()
 
-        try {
-            val image: BufferedImage = robot.getScreenshot()
-            ImageIO.write(image, "png", file)
-            logger.info("Screenshot saved: {}", file.absolutePath)
-        } catch (e: Exception) {
-            logger.warn("Remote Robot screenshot failed, falling back to screencapture: {}", e.message)
-            fallbackScreenshot(file)
+        // Strategy 1: IDE-internal paint (captures only IntelliJ window)
+        if (captureViaIdePaint(file)) {
+            return file.absolutePath
         }
+
+        // Strategy 2: Remote Robot API (captures full display)
+        if (captureViaRobotApi(file)) {
+            return file.absolutePath
+        }
+
+        // Strategy 3: macOS screencapture (captures full display, last resort)
+        captureViaMacScreencapture(file)
         return file.absolutePath
+    }
+
+    /**
+     * Capture the IDE frame by painting it to a BufferedImage on the EDT.
+     * This renders ONLY the IntelliJ IDEA window — no other apps visible.
+     *
+     * Works by executing JavaScript inside the IDE's JVM via Remote Robot:
+     * 1. Gets the project's JFrame from WindowManager
+     * 2. Creates a BufferedImage of the frame's dimensions
+     * 3. Paints the frame to the image's Graphics context on the EDT
+     * 4. Writes the image as PNG to the specified file path
+     */
+    private fun captureViaIdePaint(file: File): Boolean {
+        return try {
+            val filePath = file.absolutePath.replace("\\", "/").replace("'", "\\'")
+            robot.callJs<Boolean>("""
+                importClass(javax.swing.SwingUtilities);
+                importClass(java.awt.image.BufferedImage);
+                importClass(javax.imageio.ImageIO);
+                importClass(java.io.File);
+                importClass(java.util.concurrent.atomic.AtomicBoolean);
+
+                var success = new AtomicBoolean(false);
+                SwingUtilities.invokeAndWait(new java.lang.Runnable({
+                    run: function() {
+                        try {
+                            var projects = com.intellij.openapi.project.ProjectManager.getInstance().getOpenProjects();
+                            if (projects.length == 0) return;
+                            var frame = com.intellij.openapi.wm.WindowManager.getInstance().getFrame(projects[0]);
+                            if (frame == null) return;
+                            var w = frame.getWidth();
+                            var h = frame.getHeight();
+                            if (w <= 0 || h <= 0) return;
+                            var img = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+                            var g = img.createGraphics();
+                            frame.paint(g);
+                            g.dispose();
+                            ImageIO.write(img, "png", new File("$filePath"));
+                            success.set(true);
+                        } catch(e) {
+                            // Paint failed — fall through to other strategies
+                        }
+                    }
+                }));
+                success.get();
+            """.trimIndent())
+            if (file.exists() && file.length() > 0) {
+                logger.info("IDE-internal screenshot saved: {}", file.absolutePath)
+                true
+            } else {
+                false
+            }
+        } catch (e: Exception) {
+            logger.debug("IDE-internal screenshot failed: {}", e.message)
+            false
+        }
+    }
+
+    /**
+     * Capture via Remote Robot's getScreenshot() API.
+     * This captures the full display, not just the IDE window.
+     */
+    private fun captureViaRobotApi(file: File): Boolean {
+        return try {
+            val image = robot.getScreenshot()
+            javax.imageio.ImageIO.write(image, "png", file)
+            logger.info("Robot API screenshot saved: {}", file.absolutePath)
+            true
+        } catch (e: Exception) {
+            logger.debug("Robot API screenshot failed: {}", e.message)
+            false
+        }
+    }
+
+    /**
+     * macOS screencapture fallback (Layer 3 - R10).
+     * Activates IntelliJ first to ensure it's the frontmost window,
+     * then captures the screen.
+     */
+    private fun captureViaMacScreencapture(file: File) {
+        try {
+            // Activate IntelliJ IDEA to bring it to front before capture
+            val activate = ProcessBuilder("osascript", "-e",
+                "tell application \"IntelliJ IDEA\" to activate")
+                .redirectErrorStream(true)
+                .start()
+            activate.waitFor()
+            Thread.sleep(300)
+
+            val process = ProcessBuilder("screencapture", "-x", file.absolutePath)
+                .redirectErrorStream(true)
+                .start()
+            val exitCode = process.waitFor()
+            if (exitCode == 0) {
+                logger.info("macOS screencapture saved: {}", file.absolutePath)
+            } else {
+                logger.error("screencapture failed with exit code: {}", exitCode)
+            }
+        } catch (e: Exception) {
+            logger.error("macOS screencapture failed: {}", e.message)
+        }
     }
 
     /**
@@ -60,25 +173,6 @@ class ScreenCapture(
             file.writeText("<error>${e.message}</error>")
         }
         return file.absolutePath
-    }
-
-    /**
-     * macOS screencapture fallback (Layer 3 - R10).
-     */
-    private fun fallbackScreenshot(file: File) {
-        try {
-            val process = ProcessBuilder("screencapture", "-x", file.absolutePath)
-                .redirectErrorStream(true)
-                .start()
-            val exitCode = process.waitFor()
-            if (exitCode == 0) {
-                logger.info("Fallback screenshot saved: {}", file.absolutePath)
-            } else {
-                logger.error("screencapture failed with exit code: {}", exitCode)
-            }
-        } catch (e: Exception) {
-            logger.error("Fallback screencapture failed: {}", e.message)
-        }
     }
 
     /**

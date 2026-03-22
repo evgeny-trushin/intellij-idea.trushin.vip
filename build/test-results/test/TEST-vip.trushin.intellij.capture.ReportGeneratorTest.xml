@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="vip.trushin.intellij.capture.ReportGeneratorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-03-22T21:52:37" hostname="1-c.local" time="0.201">
+<testsuite name="vip.trushin.intellij.capture.ReportGeneratorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-03-22T22:41:36" hostname="1-c.local" time="0.185">
   <properties/>
-  <testcase name="generates mermaid sequence diagram()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.169"/>
-  <testcase name="generates report from empty log()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.004"/>
-  <testcase name="generates git command equivalents()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.009"/>
-  <testcase name="report output file is written()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.006"/>
-  <testcase name="detailed event log includes all fields()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.004"/>
-  <testcase name="generates report with missing log file()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.002"/>
+  <testcase name="generates mermaid sequence diagram()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.165"/>
+  <testcase name="generates report from empty log()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.002"/>
+  <testcase name="generates git command equivalents()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.006"/>
+  <testcase name="report output file is written()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.002"/>
+  <testcase name="detailed event log includes all fields()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.003"/>
+  <testcase name="generates report with missing log file()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.001"/>
   <testcase name="generates summary table with event data()" classname="vip.trushin.intellij.capture.ReportGeneratorTest" time="0.002"/>
-  <system-out><![CDATA[08:52:37.195 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 3 events
-08:52:37.207 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-12764282881721511582/report.md
-08:52:37.219 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 0 events
-08:52:37.219 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-10489254117663318795/report.md
-08:52:37.227 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 11 events
-08:52:37.229 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-16631868715122504077/report.md
-08:52:37.238 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 1 events
-08:52:37.238 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-15509664036401280172/report.md
-08:52:37.242 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 1 events
-08:52:37.243 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-2862242278149643792/report.md
-08:52:37.244 [Test worker] WARN  v.t.intellij.capture.ReportGenerator - Event log not found: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-2796659503324138406/missing.jsonl
-08:52:37.245 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 0 events
-08:52:37.245 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-2796659503324138406/report.md
-08:52:37.247 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 3 events
-08:52:37.248 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-16442633394977458956/report.md
+  <system-out><![CDATA[09:41:36.187 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 3 events
+09:41:36.197 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-16594024715482912784/report.md
+09:41:36.206 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 0 events
+09:41:36.207 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-5040036918615561466/report.md
+09:41:36.211 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 11 events
+09:41:36.213 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-12099753555532286395/report.md
+09:41:36.216 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 1 events
+09:41:36.216 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-2486612622029835040/report.md
+09:41:36.219 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 1 events
+09:41:36.220 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-4761180390087757661/report.md
+09:41:36.221 [Test worker] WARN  v.t.intellij.capture.ReportGenerator - Event log not found: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-16923037981208205047/missing.jsonl
+09:41:36.221 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 0 events
+09:41:36.222 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-16923037981208205047/report.md
+09:41:36.224 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Generating report from 3 events
+09:41:36.224 [Test worker] INFO  v.t.intellij.capture.ReportGenerator - Report generated: /var/folders/jp/gxg9x92s6ngdgym1nvcstml40000gn/T/report-test-766964248339901665/report.md
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="vip.trushin.intellij.model.GitFlowEventTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-03-22T21:52:37" hostname="1-c.local" time="0.007">
+<testsuite name="vip.trushin.intellij.model.GitFlowEventTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-03-22T22:41:36" hostname="1-c.local" time="0.003">
   <properties/>
   <testcase name="all action sources are represented()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.0"/>
   <testcase name="toJson produces valid JSON round-trip()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.0"/>
-  <testcase name="all outcomes are represented()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.001"/>
+  <testcase name="all outcomes are represented()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.0"/>
   <testcase name="all event types are represented()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.0"/>
-  <testcase name="toJsonPretty is human-readable()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.0"/>
+  <testcase name="toJsonPretty is human-readable()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.001"/>
   <testcase name="event has auto-generated id and timestamp()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.0"/>
-  <testcase name="event defaults to empty collections and SUCCESS()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.004"/>
+  <testcase name="event defaults to empty collections and SUCCESS()" classname="vip.trushin.intellij.model.GitFlowEventTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

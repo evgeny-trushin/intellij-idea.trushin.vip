@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="vip.trushin.intellij.workflows.CherryPickFlowTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-22T10:43:21" hostname="1-c.local" time="22.987">
+<testsuite name="vip.trushin.intellij.workflows.CherryPickFlowTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-22T21:52:51" hostname="1-c.local" time="45.997">
   <properties/>
-  <testcase name="Step 1: Open Git Log and view commits" classname="vip.trushin.intellij.workflows.CherryPickFlowTest" time="5.937"/>
-  <testcase name="Step 2: Cherry-pick the selected commit" classname="vip.trushin.intellij.workflows.CherryPickFlowTest" time="1.143"/>
-  <testcase name="Step 3: Push after cherry-pick" classname="vip.trushin.intellij.workflows.CherryPickFlowTest" time="15.907"/>
-  <system-out><![CDATA[21:43:20.998 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /Users/macbookpro/git-flow-log.jsonl
-21:43:21.501 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: open_log_select_commit (CHERRY_PICK) ===
-21:43:23.420 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214321_502_before_open_log_select_commit.png
-21:43:23.718 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214323_420_before_open_log_select_commit_hierarchy.xml
-21:43:23.720 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214321_502_before_open_log_select_commit.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214323_420_before_open_log_select_commit_hierarchy.xml
+  <testcase name="Step 1: Open Git Log and view commit history" classname="vip.trushin.intellij.workflows.CherryPickFlowTest" time="9.739"/>
+  <testcase name="Step 2: Cherry-pick a commit" classname="vip.trushin.intellij.workflows.CherryPickFlowTest" time="13.295"/>
+  <testcase name="Step 3: Push after cherry-pick via Push dialog" classname="vip.trushin.intellij.workflows.CherryPickFlowTest" time="22.962"/>
+  <system-out><![CDATA[08:52:51.268 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /Users/macbookpro/git-flow-log.jsonl
+08:52:52.877 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: open_git_log_for_cherry_pick (CHERRY_PICK) ===
+08:52:54.247 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085253_381_before_open_git_log_for_cherry_pick.png
+08:52:54.437 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085254_247_before_open_git_log_for_cherry_pick_hierarchy.xml
+08:52:54.437 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085253_381_before_open_git_log_for_cherry_pick.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085254_247_before_open_git_log_for_cherry_pick_hierarchy.xml
+08:52:57.838 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085257_552_during_git_log_commit_list.png
 Recent commits:
+914ff2e Merge remote-tracking branch 'origin/main'
+46b2d1a Init Commit
+7e0a221 test: GitFlow capture test commit
 51f4cb3 Initial commit
-21:43:27.373 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214326_998_after_open_log_select_commit.png
-21:43:27.427 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214327_374_after_open_log_select_commit_hierarchy.xml
-21:43:27.427 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214326_998_after_open_log_select_commit.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214327_374_after_open_log_select_commit_hierarchy.xml
-21:43:27.431 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=CHERRY_PICK, outcome=SUCCESS
-21:43:27.431 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: open_log_select_commit -> SUCCESS ===
-21:43:27.437 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: cherry_pick_commit (CHERRY_PICK) ===
-21:43:27.791 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214327_437_before_cherry_pick_commit.png
-21:43:27.834 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214327_791_before_cherry_pick_commit_hierarchy.xml
-21:43:27.834 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214327_437_before_cherry_pick_commit.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214327_791_before_cherry_pick_commit_hierarchy.xml
-21:43:28.527 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214328_137_after_cherry_pick_commit.png
-21:43:28.577 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214328_527_after_cherry_pick_commit_hierarchy.xml
-21:43:28.577 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214328_137_after_cherry_pick_commit.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214328_527_after_cherry_pick_commit_hierarchy.xml
-21:43:28.578 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=CHERRY_PICK, outcome=SUCCESS
-21:43:28.578 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: cherry_pick_commit -> SUCCESS ===
-21:43:28.580 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: push_after_cherry_pick (PUSH) ===
-21:43:28.944 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214328_580_before_push_after_cherry_pick.png
-21:43:28.986 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214328_944_before_push_after_cherry_pick_hierarchy.xml
-21:43:28.986 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214328_580_before_push_after_cherry_pick.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214328_944_before_push_after_cherry_pick_hierarchy.xml
-21:43:44.439 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214344_024_after_push_after_cherry_pick.png
-21:43:44.484 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214344_439_after_push_after_cherry_pick_hierarchy.xml
-21:43:44.484 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214344_024_after_push_after_cherry_pick.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/captures/20260322_214344_439_after_push_after_cherry_pick_hierarchy.xml
-21:43:44.485 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
-21:43:44.485 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: push_after_cherry_pick -> SUCCESS ===
+08:52:59.754 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085259_398_after_open_git_log_for_cherry_pick.png
+08:52:59.893 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085259_755_after_open_git_log_for_cherry_pick_hierarchy.xml
+08:52:59.893 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085259_398_after_open_git_log_for_cherry_pick.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085259_755_after_open_git_log_for_cherry_pick_hierarchy.xml
+08:52:59.896 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=CHERRY_PICK, outcome=SUCCESS
+08:52:59.896 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: open_git_log_for_cherry_pick -> SUCCESS ===
+08:53:02.465 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: cherry_pick_commit (CHERRY_PICK) ===
+08:53:03.194 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085302_967_before_cherry_pick_commit.png
+08:53:03.328 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085303_195_before_cherry_pick_commit_hierarchy.xml
+08:53:03.329 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085302_967_before_cherry_pick_commit.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085303_195_before_cherry_pick_commit_hierarchy.xml
+08:53:07.863 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085307_599_during_git_log_before_cherry_pick.png
+08:53:10.105 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085309_877_during_cherry_pick_action.png
+08:53:13.469 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085313_246_after_cherry_pick_commit.png
+08:53:13.511 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085313_469_after_cherry_pick_commit_hierarchy.xml
+08:53:13.511 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085313_246_after_cherry_pick_commit.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085313_469_after_cherry_pick_commit_hierarchy.xml
+08:53:13.511 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=CHERRY_PICK, outcome=SUCCESS
+08:53:13.511 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: cherry_pick_commit -> SUCCESS ===
+08:53:15.779 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: push_after_cherry_pick (PUSH) ===
+08:53:16.536 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085316_285_before_push_after_cherry_pick.png
+08:53:16.572 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085316_536_before_push_after_cherry_pick_hierarchy.xml
+08:53:16.572 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085316_285_before_push_after_cherry_pick.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085316_536_before_push_after_cherry_pick_hierarchy.xml
+08:53:29.183 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085328_941_during_push_dialog_cherry_pick_error.png
+08:53:35.699 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - Screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085335_467_after_push_after_cherry_pick.png
+08:53:35.751 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085335_699_after_push_after_cherry_pick_hierarchy.xml
+08:53:35.752 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085335_467_after_push_after_cherry_pick.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085335_699_after_push_after_cherry_pick_hierarchy.xml
+08:53:35.752 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=PUSH, outcome=SUCCESS
+08:53:35.752 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: push_after_cherry_pick -> SUCCESS ===
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
