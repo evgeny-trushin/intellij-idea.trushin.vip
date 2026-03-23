@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="vip.trushin.intellij.workflows.StashFlowTest" tests="3" skipped="0" failures="1" errors="0" timestamp="2026-03-22T22:43:17" hostname="1-c.local" time="32.05">
+<testsuite name="vip.trushin.intellij.workflows.StashFlowTest" tests="3" skipped="0" failures="1" errors="0" timestamp="2026-03-22T22:50:23" hostname="1-c.local" time="31.455">
   <properties/>
-  <testcase name="Step 1: Stash current changes via Stash dialog" classname="vip.trushin.intellij.workflows.StashFlowTest" time="4.839">
+  <testcase name="Step 1: Stash current changes via Stash dialog" classname="vip.trushin.intellij.workflows.StashFlowTest" time="4.648">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;SUCCESS&gt; but was: &lt;FAILURE&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;SUCCESS&gt; but was: &lt;FAILURE&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -96,14 +96,14 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Step 2: Switch branch via Branches popup" classname="vip.trushin.intellij.workflows.StashFlowTest" time="13.785"/>
-  <testcase name="Step 3: Pop stash via UnStash dialog" classname="vip.trushin.intellij.workflows.StashFlowTest" time="13.425"/>
-  <system-out><![CDATA[09:43:17.448 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /Users/macbookpro/git-flow-log.jsonl
-09:43:18.810 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: stash_changes (STASH) ===
-09:43:19.419 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094319_316_before_stash_changes.png
-09:43:19.486 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094319_419_before_stash_changes_hierarchy.xml
-09:43:19.486 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094319_316_before_stash_changes.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094319_419_before_stash_changes_hierarchy.xml
-09:43:19.612 [Test worker] ERROR v.t.intellij.capture.CapturePipeline - Action 'stash_changes' failed: IdeaSideException: TypeError: Cannot find function writeText in object /Users/macbookpro/openSource/intellij-idea.trushin.vip/stash-test-temp.txt. (js#11)
+  <testcase name="Step 2: Switch branch via Branches popup" classname="vip.trushin.intellij.workflows.StashFlowTest" time="13.646"/>
+  <testcase name="Step 3: Pop stash via UnStash dialog" classname="vip.trushin.intellij.workflows.StashFlowTest" time="13.16"/>
+  <system-out><![CDATA[09:50:22.828 [Test worker] INFO  v.trushin.intellij.model.EventLogger - Event logger writing to: /Users/macbookpro/git-flow-log.jsonl
+09:50:24.104 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: stash_changes (STASH) ===
+09:50:24.708 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095024_610_before_stash_changes.png
+09:50:24.759 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095024_709_before_stash_changes_hierarchy.xml
+09:50:24.759 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095024_610_before_stash_changes.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095024_709_before_stash_changes_hierarchy.xml
+09:50:24.854 [Test worker] ERROR v.t.intellij.capture.CapturePipeline - Action 'stash_changes' failed: IdeaSideException: TypeError: Cannot find function writeText in object /Users/macbookpro/openSource/intellij-idea.trushin.vip/stash-test-temp.txt. (js#11)
 com.intellij.remoterobot.client.IdeaSideException: TypeError: Cannot find function writeText in object /Users/macbookpro/openSource/intellij-idea.trushin.vip/stash-test-temp.txt. (js#11)
 	at com.intellij.remoterobot.client.IdeRobotClient.throwIdeaSideError(IdeRobotClient.kt:141)
 	at com.intellij.remoterobot.client.IdeRobotClient.processRetrieveResponse(IdeRobotClient.kt:117)
@@ -209,12 +209,12 @@ Caused by: java.lang.Throwable: null
 	at org.mozilla.javascript.ScriptRuntime.notFunctionError(ScriptRuntime.java:4789)
 	at org.mozilla.javascript.ScriptRuntime.getPropFunctionAndThisHelper(ScriptRuntime.java:2656)
 	at org.mozilla.javascript.ScriptRuntime.getPropFunctionAndThis(ScriptRuntime.java:2639)
-	at org.mozilla.javascript.gen.js_8._c_script_0(js:11)
-	at org.mozilla.javascript.gen.js_8.call(js)
+	at org.mozilla.javascript.gen.js_314._c_script_0(js:11)
+	at org.mozilla.javascript.gen.js_314.call(js)
 	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:383)
 	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3940)
-	at org.mozilla.javascript.gen.js_8.call(js)
-	at org.mozilla.javascript.gen.js_8.exec(js)
+	at org.mozilla.javascript.gen.js_314.call(js)
+	at org.mozilla.javascript.gen.js_314.exec(js)
 	at com.intellij.remoterobot.services.js.RhinoJavaScriptExecutor.executeWithContext(RhinoJavaScriptExecutor.kt:65)
 	at com.intellij.remoterobot.services.js.RhinoJavaScriptExecutor.execute(RhinoJavaScriptExecutor.kt:16)
 	at com.intellij.remoterobot.services.IdeRobot$retrieveAny$4.invoke(IdeRobot.kt:369)
@@ -242,31 +242,31 @@ Caused by: java.lang.Throwable: null
 	at io.ktor.server.netty.EventLoopGroupProxy$Companion.create$lambda$1$lambda$0(NettyApplicationEngine.kt:296)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-09:43:21.215 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094321_118_after_stash_changes.png
-09:43:21.293 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094321_215_after_stash_changes_hierarchy.xml
-09:43:21.294 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094321_118_after_stash_changes.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094321_215_after_stash_changes_hierarchy.xml
-09:43:21.303 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=STASH, outcome=FAILURE
-09:43:21.303 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: stash_changes -> FAILURE ===
-09:43:23.621 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: switch_branch_with_stash (CHECKOUT) ===
-09:43:24.209 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094324_123_before_switch_branch_with_stash.png
-09:43:24.259 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094324_210_before_switch_branch_with_stash_hierarchy.xml
-09:43:24.260 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094324_123_before_switch_branch_with_stash.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094324_210_before_switch_branch_with_stash_hierarchy.xml
-09:43:27.867 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094327_815_during_branches_popup_switch.png
-09:43:35.025 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094334_959_after_switch_branch_with_stash.png
-09:43:35.090 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094335_026_after_switch_branch_with_stash_hierarchy.xml
-09:43:35.090 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094334_959_after_switch_branch_with_stash.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094335_026_after_switch_branch_with_stash_hierarchy.xml
-09:43:35.091 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=CHECKOUT, outcome=SUCCESS
-09:43:35.091 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: switch_branch_with_stash -> SUCCESS ===
-09:43:37.431 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: pop_stash (STASH) ===
-09:43:38.031 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094337_935_before_pop_stash.png
-09:43:38.102 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094338_031_before_pop_stash_hierarchy.xml
-09:43:38.102 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094337_935_before_pop_stash.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094338_031_before_pop_stash_hierarchy.xml
-09:43:40.280 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094340_231_during_unstash_dialog.png
-09:43:48.522 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094348_454_after_pop_stash.png
-09:43:48.567 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094348_523_after_pop_stash_hierarchy.xml
-09:43:48.567 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094348_454_after_pop_stash.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_094348_523_after_pop_stash_hierarchy.xml
-09:43:48.568 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=STASH, outcome=SUCCESS
-09:43:48.569 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: pop_stash -> SUCCESS ===
+09:50:26.445 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095026_366_after_stash_changes.png
+09:50:26.490 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095026_445_after_stash_changes_hierarchy.xml
+09:50:26.491 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095026_366_after_stash_changes.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095026_445_after_stash_changes_hierarchy.xml
+09:50:26.499 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=STASH, outcome=FAILURE
+09:50:26.499 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: stash_changes -> FAILURE ===
+09:50:28.730 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: switch_branch_with_stash (CHECKOUT) ===
+09:50:29.308 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095029_232_before_switch_branch_with_stash.png
+09:50:29.347 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095029_308_before_switch_branch_with_stash_hierarchy.xml
+09:50:29.347 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095029_232_before_switch_branch_with_stash.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095029_308_before_switch_branch_with_stash_hierarchy.xml
+09:50:32.972 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095032_891_during_branches_popup_switch.png
+09:50:40.121 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095040_052_after_switch_branch_with_stash.png
+09:50:40.159 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095040_121_after_switch_branch_with_stash_hierarchy.xml
+09:50:40.159 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095040_052_after_switch_branch_with_stash.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095040_121_after_switch_branch_with_stash_hierarchy.xml
+09:50:40.160 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=CHECKOUT, outcome=SUCCESS
+09:50:40.160 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: switch_branch_with_stash -> SUCCESS ===
+09:50:42.383 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture: pop_stash (STASH) ===
+09:50:42.960 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095042_888_before_pop_stash.png
+09:50:43.002 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095042_960_before_pop_stash_hierarchy.xml
+09:50:43.002 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Pre-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095042_888_before_pop_stash.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095042_960_before_pop_stash_hierarchy.xml
+09:50:45.120 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095045_044_during_unstash_dialog.png
+09:50:53.230 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - IDE-internal screenshot saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095053_152_after_pop_stash.png
+09:50:53.271 [Test worker] INFO  v.t.intellij.capture.ScreenCapture - UI tree via inspection endpoint saved: /Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095053_231_after_pop_stash_hierarchy.xml
+09:50:53.272 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - Post-capture complete: screenshot=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095053_152_after_pop_stash.png, tree=/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_095053_231_after_pop_stash_hierarchy.xml
+09:50:53.272 [Test worker] DEBUG v.trushin.intellij.model.EventLogger - Logged event: type=STASH, outcome=SUCCESS
+09:50:53.272 [Test worker] INFO  v.t.intellij.capture.CapturePipeline - === Capture complete: pop_stash -> SUCCESS ===
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

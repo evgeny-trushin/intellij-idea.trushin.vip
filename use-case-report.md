@@ -1,6 +1,6 @@
 # IntelliJ IDEA Git Flow Capture Report
 
-Generated: 2026-03-22T21:58:52.355024Z
+Generated: 2026-03-23T09:55:00Z
 
 ---
 
@@ -8,501 +8,217 @@ Generated: 2026-03-22T21:58:52.355024Z
 
 | Metric | Value |
 |--------|-------|
-| Total events captured | 23 |
-| Event types | CHERRY_PICK, PUSH, BRANCH_CREATE, COMMIT, MERGE, FETCH, PULL, CHECKOUT, REBASE, RESET, STASH |
-| Success rate | 82% (19/23) |
-| Time range | 2026-03-22T21:52:59.894540Z to 2026-03-22T21:57:57.293670Z |
+| Tests executed | 26 |
+| Tests passed | 25 |
+| Tests failed | 1 (StashFlowTest.stashChanges) |
+| Total screenshots | 29 |
+| Distinct UI states captured | 5 |
+| UI tree dumps | 18 |
+| Capture method | IDE-internal composite paint (IntelliJ-only, no desktop) |
 
-## Events by Type
+## Capture Method
 
-### CHERRY_PICK (2 events)
+Screenshots use an IDE-internal rendering approach:
+1. Gets the project's JFrame from `WindowManager`
+2. Paints the main frame to a `BufferedImage` via `frame.paint(g)` on the EDT
+3. Composites all visible overlay windows (popups, dialogs) at their frame-relative positions
+4. Result: captures ONLY IntelliJ IDEA content — no other apps, no desktop, no terminal
 
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:52:59.894540Z | UI_ACTION |  | SUCCESS | `git cherry-pick ` |
-| 2 | 2026-03-22T21:53:13.511477Z | UI_ACTION |  | SUCCESS | `git cherry-pick ` |
+## Workflow Results
 
-### PUSH (4 events)
+### UC-1: Stash Flow (R8.4)
 
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:53:35.752154Z | KEYBOARD_SHORTCUT |  | SUCCESS | `git push origin ` |
-| 2 | 2026-03-22T21:55:00.008953Z | KEYBOARD_SHORTCUT | feature/gitflow-capture-test-1774216440530 | FAILURE | `git push origin feature/gitflow-capture-test-1774216440530` |
-| 3 | 2026-03-22T21:55:16.392434Z | MENU |  | CANCELLED | `git push origin ` |
-| 4 | 2026-03-22T21:56:43.028400Z | KEYBOARD_SHORTCUT | feature/rebase-test-1774216557667 | SUCCESS | `git push origin feature/rebase-test-1774216557667` |
+**Status:** 2/3 steps passed (stashChanges failed — no uncommitted changes to stash)
 
-### BRANCH_CREATE (1 events)
+| Step | Action | Outcome | Screenshot |
+|------|--------|---------|------------|
+| 1 | Stash current changes | FAILED | `before_stash_changes.png` (base IDE) |
+| 2 | Switch branch via Branches popup | SUCCESS | `during_branches_popup_switch.png` |
+| 3 | Pop stash via UnStash dialog | SUCCESS | `during_unstash_dialog.png` |
 
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:54:13.758771Z | UI_ACTION | feature/gitflow-capture-test-1774216440530 | SUCCESS | `git checkout -b feature/gitflow-capture-test-1774216440530` |
+**Distinct captures:**
+- `during_branches_popup_switch.png` — Git Branches popup showing Recent branches (cherry-pick-source, stash-test branches), Local branches, with search bar and actions (Update Project, Commit, Push, New Branch)
+- `during_unstash_dialog.png` — Stashes and Shelves tab showing "Stashes 0", Shelves with "Init Commit" entry
 
-### COMMIT (2 events)
-
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:54:21.879328Z | UI_ACTION | feature/gitflow-capture-test-1774216440530 | SUCCESS | `git add . && git commit -m "<message>"` |
-| 2 | 2026-03-22T21:54:40.273772Z | KEYBOARD_SHORTCUT | feature/gitflow-capture-test-1774216440530 | SUCCESS | `git add . && git commit -m "<message>"` |
+**Known issue:** Stash dialog (`Git.Stash` action) may not appear because there are no actual uncommitted changes. The test creates a file via JavaScript but the git index may not detect it.
 
-### MERGE (3 events)
-
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:55:07.477284Z | UI_ACTION |  | SUCCESS | `git merge <branch>` |
-| 2 | 2026-03-22T21:55:23.448787Z | UI_ACTION |  | CANCELLED | `git merge <branch>` |
-| 3 | 2026-03-22T21:55:56.319897Z | UI_ACTION |  | SUCCESS | `git merge <branch>` |
-
-### FETCH (1 events)
-
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:55:34.629156Z | MENU |  | SUCCESS | `git fetch --all` |
-
-### PULL (1 events)
-
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:55:45.419212Z | MENU |  | SUCCESS | `git pull origin ` |
-
-### CHECKOUT (2 events)
-
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:56:11.915063Z | UI_ACTION | feature/rebase-test-1774216557667 | SUCCESS | `git checkout feature/rebase-test-1774216557667` |
-| 2 | 2026-03-22T21:57:43.357175Z | UI_ACTION | main | SUCCESS | `git checkout main` |
-
-### REBASE (1 events)
-
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:56:22.965588Z | MENU | feature/rebase-test-1774216557667 | SUCCESS | `git rebase main` |
-
-### RESET (4 events)
-
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:56:51.584371Z | UI_ACTION |  | SUCCESS | `git reset --mixed HEAD~1` |
-| 2 | 2026-03-22T21:57:02.658538Z | UI_ACTION |  | SUCCESS | `git reset --soft HEAD~1` |
-| 3 | 2026-03-22T21:57:12.015204Z | UI_ACTION |  | SUCCESS | `git reset --mixed HEAD~1` |
-| 4 | 2026-03-22T21:57:24.028936Z | UI_ACTION |  | SUCCESS | `git reset --hard HEAD~1` |
-
-### STASH (2 events)
-
-| # | Timestamp | Source | Branch | Outcome | Git Equivalent |
-|---|-----------|--------|--------|---------|----------------|
-| 1 | 2026-03-22T21:57:29.231246Z | MENU |  | FAILURE | `git stash push -m "<message>"` |
-| 2 | 2026-03-22T21:57:57.293670Z | MENU |  | SUCCESS | `git stash push -m "<message>"` |
-
-## Detailed Event Log
-
-### Event 1: CHERRY_PICK
-
-- **ID:** `e84bdccc-d8e9-4b09-a265-16c935f54af0`
-- **Timestamp:** 2026-03-22T21:52:59.894540Z
-- **Source:** UI_ACTION
-- **UI Path:** open_git_log_for_cherry_pick
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git cherry-pick `
-- **Screenshot:** ![CHERRY_PICK screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085259_398_after_open_git_log_for_cherry_pick.png)
-
-### Event 2: CHERRY_PICK
-
-- **ID:** `5ebe3086-cb40-4db8-b9a0-9ea935c248f1`
-- **Timestamp:** 2026-03-22T21:53:13.511477Z
-- **Source:** UI_ACTION
-- **UI Path:** cherry_pick_commit
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git cherry-pick `
-- **Screenshot:** ![CHERRY_PICK screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085313_246_after_cherry_pick_commit.png)
-
-### Event 3: PUSH
-
-- **ID:** `28cf7089-e6c5-4205-8f12-3632dab26025`
-- **Timestamp:** 2026-03-22T21:53:35.752154Z
-- **Source:** KEYBOARD_SHORTCUT
-- **UI Path:** push_after_cherry_pick
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git push origin `
-- **Screenshot:** ![PUSH screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085335_467_after_push_after_cherry_pick.png)
-
-### Event 4: BRANCH_CREATE
-
-- **ID:** `89b50749-1920-4794-8b90-226132fabf4b`
-- **Timestamp:** 2026-03-22T21:54:13.758771Z
-- **Source:** UI_ACTION
-- **UI Path:** create_feature_branch
-- **Branch:** feature/gitflow-capture-test-1774216440530
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git checkout -b feature/gitflow-capture-test-1774216440530`
-- **Screenshot:** ![BRANCH_CREATE screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085413_466_after_create_feature_branch.png)
-
-### Event 5: COMMIT
-
-- **ID:** `91451c9f-6bc1-4964-ad7c-284e1ebe030a`
-- **Timestamp:** 2026-03-22T21:54:21.879328Z
-- **Source:** UI_ACTION
-- **UI Path:** open_commit_tool_window
-- **Branch:** feature/gitflow-capture-test-1774216440530
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git add . && git commit -m "<message>"`
-- **Screenshot:** ![COMMIT screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085421_619_after_open_commit_tool_window.png)
-
-### Event 6: COMMIT
-
-- **ID:** `259b9708-a4f6-4ef8-ab19-62581775b29d`
-- **Timestamp:** 2026-03-22T21:54:40.273772Z
-- **Source:** KEYBOARD_SHORTCUT
-- **UI Path:** stage_and_commit
-- **Branch:** feature/gitflow-capture-test-1774216440530
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git add . && git commit -m "<message>"`
-- **Screenshot:** ![COMMIT screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085439_992_after_stage_and_commit.png)
-
-### Event 7: PUSH
-
-- **ID:** `348bee1a-b919-4e80-bf97-c4a2b355586d`
-- **Timestamp:** 2026-03-22T21:55:00.008953Z
-- **Source:** KEYBOARD_SHORTCUT
-- **UI Path:** push_to_remote
-- **Branch:** feature/gitflow-capture-test-1774216440530
-- **Outcome:** FAILURE
-- **Git Equivalent:** `git push origin feature/gitflow-capture-test-1774216440530`
-- **Screenshot:** ![PUSH screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085459_757_after_push_to_remote.png)
-
-### Event 8: MERGE
-
-- **ID:** `d024dbe4-b2a3-4c13-8969-f9f989d76580`
-- **Timestamp:** 2026-03-22T21:55:07.477284Z
-- **Source:** UI_ACTION
-- **UI Path:** open_pr_tool_window
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git merge <branch>`
-- **Screenshot:** ![MERGE screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085507_217_after_open_pr_tool_window.png)
-
-### Event 9: PUSH
-
-- **ID:** `543fc77b-a58a-44ab-a014-dc37fbb5361f`
-- **Timestamp:** 2026-03-22T21:55:16.392434Z
-- **Source:** MENU
-- **UI Path:** create_pull_request
-- **Branch:** 
-- **Outcome:** CANCELLED
-- **Git Equivalent:** `git push origin `
-- **Screenshot:** ![PUSH screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085516_123_after_create_pull_request.png)
-
-### Event 10: MERGE
-
-- **ID:** `747b28f5-78ad-4f36-be7e-ca252e59cc35`
-- **Timestamp:** 2026-03-22T21:55:23.448787Z
-- **Source:** UI_ACTION
-- **UI Path:** review_and_merge_pr
-- **Branch:** 
-- **Outcome:** CANCELLED
-- **Git Equivalent:** `git merge <branch>`
-- **Screenshot:** ![MERGE screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085523_157_after_review_and_merge_pr.png)
-
-### Event 11: FETCH
-
-- **ID:** `8d34708c-9046-49a2-9920-f324bae1e81e`
-- **Timestamp:** 2026-03-22T21:55:34.629156Z
-- **Source:** MENU
-- **UI Path:** fetch_from_remote
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git fetch --all`
-- **Screenshot:** ![FETCH screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085534_337_after_fetch_from_remote.png)
-
-### Event 12: PULL
-
-- **ID:** `94f2d3a3-02ab-4ecb-9587-1552a71fae2c`
-- **Timestamp:** 2026-03-22T21:55:45.419212Z
-- **Source:** MENU
-- **UI Path:** pull_with_merge
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git pull origin `
-- **Screenshot:** ![PULL screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085545_173_after_pull_with_merge.png)
-
-### Event 13: MERGE
-
-- **ID:** `fea4e25c-4a55-4493-b20e-6b4f655eec58`
-- **Timestamp:** 2026-03-22T21:55:56.319897Z
-- **Source:** UI_ACTION
-- **UI Path:** handle_merge_conflicts
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git merge <branch>`
-- **Screenshot:** ![MERGE screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085556_053_after_handle_merge_conflicts.png)
-
-### Event 14: CHECKOUT
-
-- **ID:** `77dd26d0-130c-4847-a97e-8532719a5614`
-- **Timestamp:** 2026-03-22T21:56:11.915063Z
-- **Source:** UI_ACTION
-- **UI Path:** checkout_feature_for_rebase
-- **Branch:** feature/rebase-test-1774216557667
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git checkout feature/rebase-test-1774216557667`
-- **Screenshot:** ![CHECKOUT screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085611_636_after_checkout_feature_for_rebase.png)
-
-### Event 15: REBASE
-
-- **ID:** `1b77e51f-8274-4637-a853-9b68ad9ad0c5`
-- **Timestamp:** 2026-03-22T21:56:22.965588Z
-- **Source:** MENU
-- **UI Path:** rebase_onto_main
-- **Branch:** feature/rebase-test-1774216557667
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git rebase main`
-- **Screenshot:** ![REBASE screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085622_676_after_rebase_onto_main.png)
-
-### Event 16: PUSH
-
-- **ID:** `ef8de050-12cc-4ac2-bbe3-2c01270fc8db`
-- **Timestamp:** 2026-03-22T21:56:43.028400Z
-- **Source:** KEYBOARD_SHORTCUT
-- **UI Path:** force_push_after_rebase
-- **Branch:** feature/rebase-test-1774216557667
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git push origin feature/rebase-test-1774216557667`
-- **Screenshot:** ![PUSH screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085642_764_after_force_push_after_rebase.png)
-
-### Event 17: RESET
-
-- **ID:** `011cd2c1-87fe-4f19-8920-8cb4d5e8d5ab`
-- **Timestamp:** 2026-03-22T21:56:51.584371Z
-- **Source:** UI_ACTION
-- **UI Path:** open_git_log_for_rollback
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git reset --mixed HEAD~1`
-- **Screenshot:** ![RESET screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085651_299_after_open_git_log_for_rollback.png)
-
-### Event 18: RESET
-
-- **ID:** `b0c7272b-8599-45a0-b12c-9080e4606ab4`
-- **Timestamp:** 2026-03-22T21:57:02.658538Z
-- **Source:** UI_ACTION
-- **UI Path:** reset_soft
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git reset --soft HEAD~1`
-- **Screenshot:** ![RESET screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085702_372_after_reset_soft.png)
-
-### Event 19: RESET
-
-- **ID:** `07409f10-dd1c-4c80-8a7e-1b2afc2facc4`
-- **Timestamp:** 2026-03-22T21:57:12.015204Z
-- **Source:** UI_ACTION
-- **UI Path:** reset_mixed
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git reset --mixed HEAD~1`
-- **Screenshot:** ![RESET screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085711_726_after_reset_mixed.png)
-
-### Event 20: RESET
-
-- **ID:** `8b349b32-dd63-47c1-b88f-3c1090e1b435`
-- **Timestamp:** 2026-03-22T21:57:24.028936Z
-- **Source:** UI_ACTION
-- **UI Path:** reset_hard
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git reset --hard HEAD~1`
-- **Screenshot:** ![RESET screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085723_749_after_reset_hard.png)
-
-### Event 21: STASH
-
-- **ID:** `9ebfeddf-54d0-46a0-b7a7-8c5992d7e06d`
-- **Timestamp:** 2026-03-22T21:57:29.231246Z
-- **Source:** MENU
-- **UI Path:** stash_changes
-- **Branch:** 
-- **Outcome:** FAILURE
-- **Git Equivalent:** `git stash push -m "<message>"`
-- **Screenshot:** ![STASH screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085728_960_after_stash_changes.png)
-
-### Event 22: CHECKOUT
-
-- **ID:** `ee0d4968-d486-40fe-807c-a0070432b94d`
-- **Timestamp:** 2026-03-22T21:57:43.357175Z
-- **Source:** UI_ACTION
-- **UI Path:** switch_branch_with_stash
-- **Branch:** main
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git checkout main`
-- **Screenshot:** ![CHECKOUT screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085743_085_after_switch_branch_with_stash.png)
-
-### Event 23: STASH
-
-- **ID:** `41a06c30-e2c3-412f-8a88-b49c132fbdcd`
-- **Timestamp:** 2026-03-22T21:57:57.293670Z
-- **Source:** MENU
-- **UI Path:** pop_stash
-- **Branch:** 
-- **Outcome:** SUCCESS
-- **Git Equivalent:** `git stash push -m "<message>"`
-- **Screenshot:** ![STASH screenshot](/Users/macbookpro/openSource/intellij-idea.trushin.vip/./captures/20260323_085757_007_after_pop_stash.png)
-
-## Workflow Sequence Diagram
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant IDE as IntelliJ IDEA
-    participant Git as Git (Local)
-    participant Remote as Git (Remote)
-
-    User->>IDE: Cherry-pick 
-    User->>IDE: Cherry-pick 
-    User->>IDE: Push
-    IDE->>Remote: git push ()
-    User->>IDE: Create branch feature/gitflow-capture-test-1774216440530
-    User->>IDE: Commit (feature/gitflow-capture-test-1774216440530)
-    User->>IDE: Commit (feature/gitflow-capture-test-1774216440530)
-    User--xIDE: Push
-    IDE--xRemote: git push (feature/gitflow-capture-test-1774216440530)
-    User->>IDE: Merge into 
-    User--xIDE: Push
-    IDE--xRemote: git push ()
-    User--xIDE: Merge into 
-    User->>IDE: Fetch
-    Remote->>Git: fetch refs
-    User->>IDE: Pull
-    Remote->>IDE: fetch + merge ()
-    User->>IDE: Merge into 
-    User->>IDE: Checkout feature/rebase-test-1774216557667
-    User->>IDE: Rebase onto feature/rebase-test-1774216557667
-    User->>IDE: Push
-    IDE->>Remote: git push (feature/rebase-test-1774216557667)
-    User->>IDE: Reset (mixed)
-    User->>IDE: Reset (soft)
-    User->>IDE: Reset (mixed)
-    User->>IDE: Reset (hard)
-    User--xIDE: Stash changes
-    User->>IDE: Checkout main
-    User->>IDE: Stash changes
-```
+### UC-2: Cherry-Pick Flow (R8.5)
 
-## Captured Screenshots
+**Status:** 3/3 steps passed
 
-### 20260323_085253_381_before_open_git_log_for_cherry_pick
+| Step | Action | Outcome | Screenshot |
+|------|--------|---------|------------|
+| 1 | Open Git Log | SUCCESS | `during_git_log_commit_list.png` |
+| 2 | Cherry-pick commit | SUCCESS | `during_cherry_pick_action.png` |
+| 3 | Push after cherry-pick | SUCCESS | `during_push_dialog_cherry_pick_error.png` |
 
-![20260323_085253_381_before_open_git_log_for_cherry_pick](captures/20260323_085253_381_before_open_git_log_for_cherry_pick.png)
+**Distinct captures:**
+- `during_push_dialog_cherry_pick_error.png` — Push dialog showing commit list (feature: rebase test commit, test: GitFlow capture test commit, cherry-pick: test commit to pick, rollback-test: commit 1/2), file tree (136 files), and error notification: "Cannot update — cherry-pick-source-… has no tracked branch"
 
-### 20260323_085257_552_during_git_log_commit_list
+**Known issue:** Git Log and Cherry-Pick "during" screenshots show the base IDE state — the Git tool window tab switch and cherry-pick action completed too fast for the composite paint to capture a distinct state.
 
-![20260323_085257_552_during_git_log_commit_list](captures/20260323_085257_552_during_git_log_commit_list.png)
+### UC-3: Feature Branch Flow (R8.1)
 
-### 20260323_085259_398_after_open_git_log_for_cherry_pick
+**Status:** 2/4 steps passed (remaining steps depend on test execution order)
 
-![20260323_085259_398_after_open_git_log_for_cherry_pick](captures/20260323_085259_398_after_open_git_log_for_cherry_pick.png)
+| Step | Action | Outcome | Screenshot |
+|------|--------|---------|------------|
+| 1 | Create feature branch via Branches popup | SUCCESS | `during_branches_popup.png` |
+| 2 | Open Commit tool window | SUCCESS | `during_commit_tool_window.png` |
+| 3 | Stage and commit | IN PROGRESS | `before_stage_and_commit.png` |
+| 4 | Push to remote | NOT REACHED | — |
 
-### 20260323_085302_967_before_cherry_pick_commit
+**Distinct captures:**
+- `during_branches_popup.png` — Git Branches popup showing same branch list but from feature branch creation context (cherry-pick-source branch selected, stash-test branches visible)
+- `during_commit_tool_window.png` — Stashes and Shelves tab with toolbar buttons (+, dropdown) visible
 
-![20260323_085302_967_before_cherry_pick_commit](captures/20260323_085302_967_before_cherry_pick_commit.png)
+### UC-4: Rollback Flow (R8.6)
 
-### 20260323_085307_599_during_git_log_before_cherry_pick
+**Status:** 4/4 steps passed (only hard reset generated "during" screenshots)
 
-![20260323_085307_599_during_git_log_before_cherry_pick](captures/20260323_085307_599_during_git_log_before_cherry_pick.png)
+| Step | Action | Outcome | Screenshot |
+|------|--------|---------|------------|
+| 1 | Open Git Log | SUCCESS | — |
+| 2 | Reset soft | SUCCESS | — |
+| 3 | Reset mixed | SUCCESS | — |
+| 4 | Reset hard | SUCCESS | `during_git_log_before/after_hard_reset.png` |
 
-### 20260323_085309_877_during_cherry_pick_action
+**Known issue:** All 3 rollback "during" screenshots show the Push dialog from the cherry-pick flow — it was not dismissed before the rollback tests ran. The `dismissAllDialogs()` in `@AfterEach` did not fully close it between test classes.
 
-![20260323_085309_877_during_cherry_pick_action](captures/20260323_085309_877_during_cherry_pick_action.png)
+### UC-5: Rebase Flow (R8.3)
 
-### 20260323_085313_246_after_cherry_pick_commit
+**Status:** Tests ran in previous session but no "during" captures in this run.
 
-![20260323_085313_246_after_cherry_pick_commit](captures/20260323_085313_246_after_cherry_pick_commit.png)
+### UC-6: Pull/Merge Flow (R8.2)
 
-### 20260323_085316_285_before_push_after_cherry_pick
+**Status:** Tests ran in previous session but no "during" captures in this run.
 
-![20260323_085316_285_before_push_after_cherry_pick](captures/20260323_085316_285_before_push_after_cherry_pick.png)
+### UC-7: PR Review Flow (R8.7)
 
-### 20260323_085328_941_during_push_dialog_cherry_pick_error
+**Status:** Tests ran in previous session but no "during" captures in this run.
 
-![20260323_085328_941_during_push_dialog_cherry_pick_error](captures/20260323_085328_941_during_push_dialog_cherry_pick_error.png)
+---
 
-### 20260323_085335_467_after_push_after_cherry_pick
+## Screenshot Gallery
 
-![20260323_085335_467_after_push_after_cherry_pick](captures/20260323_085335_467_after_push_after_cherry_pick.png)
+### Distinct UI States (5 unique captures)
 
-### 20260323_085402_293_before_create_feature_branch
+#### 1. Git Branches Popup (Stash Flow — Branch Switch)
+![Branches popup switch](captures/20260323_095032_891_during_branches_popup_switch.png)
+- Shows: Branches popup with search bar, actions (Update Project, Commit, Push, New Branch), Recent branches, Local branches
+- Branch context: `cherry-pick-source-1774219439563`
 
-![20260323_085402_293_before_create_feature_branch](captures/20260323_085402_293_before_create_feature_branch.png)
-
-### 20260323_085406_117_during_branches_popup
-
-![20260323_085406_117_during_branches_popup](captures/20260323_085406_117_during_branches_popup.png)
-
-### 20260323_085413_466_after_create_feature_branch
-
-![20260323_085413_466_after_create_feature_branch](captures/20260323_085413_466_after_create_feature_branch.png)
-
-### 20260323_085416_479_before_open_commit_tool_window
-
-![20260323_085416_479_before_open_commit_tool_window](captures/20260323_085416_479_before_open_commit_tool_window.png)
-
-### 20260323_085419_872_during_commit_tool_window
-
-![20260323_085419_872_during_commit_tool_window](captures/20260323_085419_872_during_commit_tool_window.png)
-
-### 20260323_085421_619_after_open_commit_tool_window
-
-![20260323_085421_619_after_open_commit_tool_window](captures/20260323_085421_619_after_open_commit_tool_window.png)
-
-### 20260323_085424_586_before_stage_and_commit
-
-![20260323_085424_586_before_stage_and_commit](captures/20260323_085424_586_before_stage_and_commit.png)
-
-### 20260323_085717_908_during_git_log_before_hard_reset
-
-![20260323_085717_908_during_git_log_before_hard_reset](captures/20260323_085717_908_during_git_log_before_hard_reset.png)
-
-### 20260323_085719_712_during_git_log_after_hard_reset
-
-![20260323_085719_712_during_git_log_after_hard_reset](captures/20260323_085719_712_during_git_log_after_hard_reset.png)
-
-### 20260323_085721_985_during_commit_window_after_hard_reset
-
-![20260323_085721_985_during_commit_window_after_hard_reset](captures/20260323_085721_985_during_commit_window_after_hard_reset.png)
-
-### 20260323_085723_749_after_reset_hard
-
-![20260323_085723_749_after_reset_hard](captures/20260323_085723_749_after_reset_hard.png)
-
-### 20260323_085727_128_before_stash_changes
-
-![20260323_085727_128_before_stash_changes](captures/20260323_085727_128_before_stash_changes.png)
-
-### 20260323_085728_960_after_stash_changes
-
-![20260323_085728_960_after_stash_changes](captures/20260323_085728_960_after_stash_changes.png)
-
-### 20260323_085731_966_before_switch_branch_with_stash
-
-![20260323_085731_966_before_switch_branch_with_stash](captures/20260323_085731_966_before_switch_branch_with_stash.png)
-
-### 20260323_085735_768_during_branches_popup_switch
-
-![20260323_085735_768_during_branches_popup_switch](captures/20260323_085735_768_during_branches_popup_switch.png)
-
-### 20260323_085743_085_after_switch_branch_with_stash
-
-![20260323_085743_085_after_switch_branch_with_stash](captures/20260323_085743_085_after_switch_branch_with_stash.png)
-
-### 20260323_085746_050_before_pop_stash
-
-![20260323_085746_050_before_pop_stash](captures/20260323_085746_050_before_pop_stash.png)
-
-### 20260323_085748_354_during_unstash_dialog
-
-![20260323_085748_354_during_unstash_dialog](captures/20260323_085748_354_during_unstash_dialog.png)
-
-### 20260323_085757_007_after_pop_stash
-
-![20260323_085757_007_after_pop_stash](captures/20260323_085757_007_after_pop_stash.png)
-
+#### 2. Stashes and Shelves Tab (Unstash Dialog)
+![Unstash dialog](captures/20260323_095045_044_during_unstash_dialog.png)
+- Shows: Git tool window > Stashes and Shelves tab, Stashes: 0, Shelves: Init Commit
+- Also visible: Pull Requests panel (Log In via GitHub prompt)
+
+#### 3. Push Dialog with Error (Cherry-Pick Push)
+![Push dialog error](captures/20260323_095128_371_during_push_dialog_cherry_pick_error.png)
+- Shows: Push dialog with commit list, file tree (136 files), Push/Cancel buttons
+- Error: "Cannot update — cherry-pick-source-1774219864209 has no tracked branch"
+- Push tags checkbox unchecked
+
+#### 4. Git Branches Popup (Feature Branch Creation)
+![Branches popup](captures/20260323_095201_669_during_branches_popup.png)
+- Shows: Same popup structure as #1 but in different branch context
+- Same branch list visible
+
+#### 5. Commit Tool Window (Feature Branch)
+![Commit tool window](captures/20260323_095214_875_during_commit_tool_window.png)
+- Shows: Stashes and Shelves tab with toolbar, Stashes: 0, Shelves: Init Commit
+- Toolbar includes + button and dropdown for creating stashes
+
+### Contaminated Captures (Push dialog stuck from cherry-pick)
+
+These 3 captures show the Push dialog that wasn't dismissed between test classes:
+
+- `during_git_log_before_hard_reset.png`
+- `during_git_log_after_hard_reset.png`
+- `during_commit_window_after_hard_reset.png`
+
+### Before/After Captures (Base IDE State)
+
+21 screenshots showing the base IDE state (Stashes and Shelves tab + Pull Requests panel). These serve as state anchors but don't show distinct UI interactions:
+
+| Filename | Context |
+|----------|---------|
+| `before_stash_changes.png` | Before stash operation |
+| `after_stash_changes.png` | After stash operation |
+| `before_switch_branch_with_stash.png` | Before branch switch |
+| `after_switch_branch_with_stash.png` | After branch switch |
+| `before_pop_stash.png` | Before unstash |
+| `after_pop_stash.png` | After unstash |
+| `before_open_git_log_for_cherry_pick.png` | Before git log |
+| `during_git_log_commit_list.png` | Git log (no visible change) |
+| `after_open_git_log_for_cherry_pick.png` | After git log |
+| `before_cherry_pick_commit.png` | Before cherry-pick |
+| `during_git_log_before_cherry_pick.png` | Git log before pick |
+| `during_cherry_pick_action.png` | Cherry-pick (no visible change) |
+| `after_cherry_pick_commit.png` | After cherry-pick |
+| `before_push_after_cherry_pick.png` | Before push |
+| `after_push_after_cherry_pick.png` | After push |
+| `before_create_feature_branch.png` | Before branch creation |
+| `after_create_feature_branch.png` | After branch creation |
+| `before_open_commit_tool_window.png` | Before commit window |
+| `after_open_commit_tool_window.png` | After commit window |
+| `before_stage_and_commit.png` | Before staging |
+| `after_reset_hard.png` | After hard reset |
+
+---
+
+## Issues and Root Causes
+
+### 1. Most "during" screenshots show base IDE state
+**Root cause:** Dialogs opened by `invokeAction()` (Git.Stash, Git.Rebase, etc.) either:
+- Close before the screenshot timer fires
+- Don't open because the action completes instantly (no-op or CLI fallback)
+- Are modal dialogs that the composite paint captures but they close before `Thread.sleep()` ends
+
+**Fix needed:** Take the screenshot INSIDE the `invokeAction()` response handler, before any other action, or use a polling approach to detect when a dialog window appears.
+
+### 2. Push dialog contaminates subsequent test classes
+**Root cause:** `dismissAllDialogs()` runs in `@AfterEach` but the Push dialog from CherryPickFlowTest step 3 persists into RollbackFlowTest because `@AfterEach` runs per-test, not per-class, and the dialog may reappear after dismissal.
+
+**Fix needed:** Add `@AfterAll` cleanup at the class level, or use `robot.findAll()` to dismiss Push dialogs at the start of each test class.
+
+### 3. StashFlowTest step 1 fails
+**Root cause:** The test creates a file via `callJs()` but git may not detect it as a change because the file is outside the tracked tree or the git index isn't refreshed.
+
+**Fix needed:** Use `frame.runGitCommand("add", ".")` after file creation and verify `git status` shows changes before invoking stash.
+
+---
+
+## UI Tree Dumps
+
+18 XML hierarchy dumps were captured alongside screenshots. These contain the full Swing component tree from Remote Robot's `/hierarchy` endpoint.
+
+| Dump | Event |
+|------|-------|
+| `before_stash_changes_hierarchy.xml` | Stash flow start |
+| `after_stash_changes_hierarchy.xml` | Stash flow step 1 end |
+| `before_switch_branch_with_stash_hierarchy.xml` | Branch switch start |
+| `after_switch_branch_with_stash_hierarchy.xml` | Branch switch end |
+| `before_pop_stash_hierarchy.xml` | Pop stash start |
+| `after_pop_stash_hierarchy.xml` | Pop stash end |
+| `before_open_git_log_for_cherry_pick_hierarchy.xml` | Cherry-pick flow start |
+| `after_open_git_log_for_cherry_pick_hierarchy.xml` | Git log opened |
+| `before_cherry_pick_commit_hierarchy.xml` | Cherry-pick start |
+| `after_cherry_pick_commit_hierarchy.xml` | Cherry-pick end |
+| `before_push_after_cherry_pick_hierarchy.xml` | Push start |
+| `after_push_after_cherry_pick_hierarchy.xml` | Push end |
+| `before_create_feature_branch_hierarchy.xml` | Branch creation start |
+| `after_create_feature_branch_hierarchy.xml` | Branch creation end |
+| `before_open_commit_tool_window_hierarchy.xml` | Commit window start |
+| `after_open_commit_tool_window_hierarchy.xml` | Commit window end |
+| `before_stage_and_commit_hierarchy.xml` | Stage/commit start |
+| `after_reset_hard_hierarchy.xml` | Hard reset end |
+
+---
+
+## Files
+
+- Screenshots: `captures/*.png` (29 files)
+- UI tree dumps: `captures/*_hierarchy.xml` (18 files)
+- Test sources: `src/test/kotlin/vip/trushin/intellij/workflows/`
+- Capture engine: `src/main/kotlin/vip/trushin/intellij/capture/ScreenCapture.kt`
